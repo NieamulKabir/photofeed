@@ -16,7 +16,7 @@ export function middleware(request) {
   const pathname = request.nextUrl.pathname;
 
   const pathnameIsMissingLocal = locals.every(
-    (local) => !pathname.startWith(` /${local}/`) && pathname !== ` /${local}`
+    (local) => !pathname.startsWith(`/${local}/`) && pathname !== `/${local}`
   );
 
   if (pathnameIsMissingLocal) {
